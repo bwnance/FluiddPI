@@ -26,9 +26,8 @@ ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/
 cd /home/pi/
 [ ! -d /home/pi/gcode_files ] && su -c "mkdir /home/pi/gcode_files" - pi
 su -c "mkdir /home/pi/fluidd" - pi
-su -c "wget -q -O fluidd.zip https://github.com/fluidd-core/fluidd/releases/latest/download/fluidd.zip" - pi
-su -c "unzip fluidd.zip -d /home/pi/fluidd" - pi
-rm /home/pi/fluidd.zip
+su -c "git clone https://github.com/bwnance/fluidd.git" -pi
+
 
 # link logfiles to klipper_logs
 ln -s /var/log/nginx/fluidd-access.log /home/pi/klipper_logs/
